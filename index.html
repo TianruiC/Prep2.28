@@ -8,10 +8,10 @@
   <body>
     <script type="text/javascript">
     var Animal=["Lion","Penguin","Monkey","Elephant","Shark","Spider"];
-    d3.select.("body").selectAll("li")
+    d3.select.("body").selectAll("p")
       .data(datatset)
       .enter
-      .append("li")
+      .append("p")
       .text(function(d){
         return d;
       });
