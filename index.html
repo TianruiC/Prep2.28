@@ -2,15 +2,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>D3 LIST</title>
+    <title>D3</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
-    <ol>
-      </ol>
+      <h1>The difference between D3 v4 and v5 for csv file</h1>
+      <p>The difference between D3 v4 and v5 for csv is the way they handle the error situation.
+        <br/>D3 v5 uses premises rather than asynchronous callbacks to load data which allows users to simplify the structure of the asynchronous code.
+        <br/><br/>Instead of using d3.csv("file.csv", <u>function(error, data){if (error){console.log(error);}else</u> {console.log(data);}};
+        <br/>We use d3.csv("file.csv").<u>then(function(data)</u>{console.log(data);}); to load the data.
+        <br/>So we don't need to throw the error since the premise will do it automatically.
+        <br/><br/>By using const data = await d3.csv("file.csv");
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(data); , we can make the code even simpler.
+        <br/>
+        <br/>
+        <a href="https://github.com/d3/d3/blob/master/CHANGES.md">Here is the link that the resource comes from</a>
+        </p>
+      <h1>The order list</h1>
     <script type="text/javascript">
     var Animal=["Lion","Penguin","Monkey","Elephant","Shark","Spider"];
-    d3.select("body").select("ol").selectAll("li")
+    d3.select("body").append("ol").selectAll("li")
       .data(Animal)
       .enter()
       .append("li")
