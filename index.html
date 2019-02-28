@@ -7,7 +7,16 @@
   </head>
   <body>
     <script type="text/javascript">
-      
+    var Animal=["Lion","Penguin","Monkey","Elephant","Shark","Spider"];
+    d3.select.("body").selectAll("li")
+      .data(datatset)
+      .enter
+      .append("li")
+      .text(function(d){
+        return d;
+      });
+
+    </select>
             </script>
   </body>
 </html>
