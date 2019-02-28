@@ -6,12 +6,14 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
+    <ol>
+      </ol>
     <script type="text/javascript">
     var Animal=["Lion","Penguin","Monkey","Elephant","Shark","Spider"];
-    d3.select.("body").selectAll("p")
-      .data(datatset)
-      .enter
-      .append("p")
+    d3.select("body").select("ol").selectAll("li")
+      .data(Animal)
+      .enter()
+      .append("li")
       .text(function(d){
         return d;
       });
